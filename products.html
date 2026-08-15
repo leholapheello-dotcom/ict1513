@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!-- ================================================================
+     products.html  —  Products Page
+     Ha-Ntate Tladi Vegetable Vendor
+     Student: Lehola Pheello Nicolin  |  No: 22297510
+     Module:  ICT1513 — Assessment 5
+
+     Every comment below is tagged "REQ 5x" so it can be matched
+     directly against Assessment 5, requirement 5 (a–g).
+
+     CODE SOURCES — Minnick, J. (2021). Responsive Web Design
+     with HTML 5 & CSS (9th ed.). Cengage Learning.
+     ┌──────────────────────────────────────────────────────┐
+     │ Element                  │ Book page                 │
+     ├──────────────────────────────────────────────────────┤
+     │ DOCTYPE / html / head    │ Ch.1, p. HTML 31–34       │
+     │ meta viewport            │ Ch.5, p. HTML 227–228     │
+     │ link to CSS              │ Ch.4, p. HTML 159–160     │
+     │ header/nav/main/footer   │ Ch.2, p. HTML 55–58       │
+     │ h1, h2, h3               │ Ch.2, p. HTML 61–63       │
+     │ p paragraph              │ Ch.2, p. HTML 69–70       │
+     │ img src alt              │ Ch.3, p. HTML 92–97       │
+     │ a href (relative links)  │ Ch.3, p. HTML 103–104     │
+     │ ul / li                  │ Ch.3, p. HTML 112–114     │
+     │ dl / dt / dd             │ Ch.3, p. HTML 114–116     │
+     │ table/caption/thead/     │                           │
+     │   tbody/tr/th/td         │ Ch.8, p. HTML 403–415     │
+     │ nav ul li a              │ Ch.4, p. HTML 166–170     │
+     │ #container               │ Ch.4, p. HTML 156, 162    │
+     │ .action                  │ Ch.4, p. HTML 183–185     │
+     │ .external-link           │ Ch.4, p. HTML 183–185     │
+     │ &copy; &amp; &mdash;     │ Ch.2, p. HTML 63–66       │
+     └──────────────────────────────────────────────────────┘
+     ================================================================ -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ha-Ntate Tladi &mdash; Products</title>
+    <!-- A8-REQ: Add a favicon to every HTML file in the project -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="StyleSheet/styles.css">
+</head>
+<body>
+
+<div id="container">
+
+    <!-- HEADER — Ch.2, p. HTML 55–58 -->
+    <header>
+        <!-- REQ 5a: business name in header. REQ 5b: image below the
+             heading displaying the business logo — the h1 is placed
+             first, then the logo image, so the logo renders below the
+             heading text as required. -->
+        <div class="header-text">
+            <h1>Ha-Ntate Tladi</h1>
+            <p class="tagline">Fresh or Fokol &mdash; Phuthaditjhaba&rsquo;s freshest vegetables</p>
+        </div>
+        <!-- REQ 5b: logo image placed below the h1 heading — Ch.3, p. HTML 92–97 -->
+        <img src="images/logo.png" alt="Ha-Ntate Tladi logo" class="logo round">
+    </header>
+
+    <!-- REQ 5c: navigation bar linking to all pages, unordered list — Ch.4, p. HTML 166–170 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN — Ch.2, p. HTML 55–58
+         A8-REQ: "Add a class attribute value of grid to the main
+         element." class="grid" turns main into a CSS grid container
+         once the tablet/desktop media queries switch display:grid on
+         (see styles.css main.grid rules). -->
+    <main class="grid">
+
+        <!-- A8-REQ: "Modify the products page to add essential content
+             for a mobile user." A tap-to-call callout so a mobile
+             shopper can reserve produce before arriving at the stall. -->
+        <div class="mobile">
+            <h3>Ordering On the Go?</h3>
+            <p>Call ahead and we will have your bag ready when you arrive.</p>
+            <a href="tel:+27632107292" class="action">&#9742;&nbsp;Call to Order</a>
+        </div>
+
+        <div class="products-section">
+
+            <!-- h2 — Ch.2, p. HTML 61–62 -->
+            <h2>Our Products</h2>
+
+            <!-- p — Ch.2, p. HTML 69–70 -->
+            <p>All vegetables are freshly sourced every day. Prices
+               are in R10 increments so every budget is covered.</p>
+
+            <!-- ========================================================
+                 A8-REQ: "Insert three article elements within the main
+                 element. Add content to each." + "Below the last
+                 article element, insert an aside element with
+                 additional content."
+                 Each article is a short, self-contained highlight
+                 (image + heading + text); the aside that follows the
+                 third article carries related-but-secondary content
+                 (wholesale supplier info) and, in the grid layout, is
+                 styled to span all three columns — see styles.css.
+                 ======================================================== -->
+            <article class="product-highlight">
+                <img src="images/tomatoes.jpg" alt="Fresh tomatoes at Ha-Ntate Tladi">
+                <h3>Fresh Picks of the Week</h3>
+                <p>Ripe tomatoes, crisp onions and firm potatoes are
+                   restocked every morning &mdash; first come, first served.</p>
+                <ul>
+                    <li>Restocked daily before 07:00</li>
+                    <li>Hand-picked for freshness</li>
+                </ul>
+            </article>
+
+            <article class="product-highlight">
+                <img src="images/oranges.png" alt="Fresh oranges at Ha-Ntate Tladi">
+                <h3>Family Value Bundles</h3>
+                <p>Mix and match six bags of vegetables for a discounted
+                   family bundle price &mdash; ideal for the weekly shop.</p>
+                <ul>
+                    <li>Save when you buy six bags or more</li>
+                    <li>Ask at the stall for today&rsquo;s bundle price</li>
+                </ul>
+            </article>
+
+            <article class="product-highlight">
+                <img src="images/parcel.jpg" alt="Parcel counter at Ha-Ntate Tladi">
+                <h3>Parcel Counter Service</h3>
+                <p>Leave your bags safely at our counter for just R5
+                   while you shop between the two malls.</p>
+                <ul>
+                    <li>Only R5 per person</li>
+                    <li>Reclaim your bags any time before closing</li>
+                </ul>
+            </article>
+
+            <aside class="product-aside">
+                <h3>Wholesale &amp; Bulk Supplier Info</h3>
+                <p>Restaurants and resellers can enquire about bulk
+                   pricing directly at the stall, or see where we
+                   source our stock via the supplier link below.</p>
+            </aside>
+
+            <!-- REQ 5d: main tag contains a minimum of six products,
+                 each with an image, a short description, and detailed
+                 information in list format.
+                 REQ 5h (CSS req 9h): #product-list id selector -->
+            <div id="product-list">
+            <div class="products-grid">
+
+                <!-- PRODUCT 1: POTATOES — img — Ch.3, p. HTML 92–97 -->
+                <div class="product-card">
+                    <img src="images/potatoes.jpg"
+                         alt="Fresh potatoes at Ha-Ntate Tladi">
+                    <div class="product-card-body">
+                        <!-- h3 — Ch.2, p. HTML 61–62 -->
+                        <h3>Potatoes</h3>
+                        <span class="price-tag">R20 per bag</span>
+                        <!-- short description — REQ 5d -->
+                        <p>Firm, locally sourced potatoes &mdash; perfect
+                           for roasting, boiling, or frying.</p>
+                        <!-- detailed information in list format — ul — REQ 5d -->
+                        <ul>
+                            <li>Weight: &plusmn;2&nbsp;kg per bag</li>
+                            <li>Origin: Free State farms</li>
+                            <li>Best for: roasting, mashing, chips</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 2: ONIONS -->
+                <div class="product-card">
+                    <img src="images/onions.jpg"
+                         alt="Fresh onions at Ha-Ntate Tladi">
+                    <div class="product-card-body">
+                        <h3>Onions</h3>
+                        <span class="price-tag">R20 per bag</span>
+                        <p>Crisp, flavourful brown onions ideal for
+                           all your everyday cooking needs.</p>
+                        <ul>
+                            <li>Weight: &plusmn;1.5&nbsp;kg per bag</li>
+                            <li>Origin: local suppliers</li>
+                            <li>Best for: stews, relish, frying</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 3: TOMATOES -->
+                <div class="product-card">
+                    <img src="images/tomatoes.jpg"
+                         alt="Fresh tomatoes at Ha-Ntate Tladi">
+                    <div class="product-card-body">
+                        <h3>Tomatoes</h3>
+                        <span class="price-tag">R30 per bag</span>
+                        <p>Ripe, juicy tomatoes for salads, stews, and
+                           sauces &mdash; checked daily for freshness.</p>
+                        <ul>
+                            <li>Weight: &plusmn;1&nbsp;kg per bag</li>
+                            <li>Origin: local suppliers</li>
+                            <li>Best for: salads, gravy, sauces</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 4: CHILLIES -->
+                <div class="product-card">
+                    <img src="images/chillies.jpg"
+                         alt="Fresh green chillies at Ha-Ntate Tladi">
+                    <div class="product-card-body">
+                        <h3>Chillies</h3>
+                        <span class="price-tag">R10 per pack</span>
+                        <p>Fresh green chillies to bring the heat to
+                           any dish; red chillies in season.</p>
+                        <ul>
+                            <li>Weight: &plusmn;250&nbsp;g per pack</li>
+                            <li>Origin: local suppliers</li>
+                            <li>Best for: relish, stews, sauces</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 5: CABBAGE -->
+                <div class="product-card">
+                    <img src="images/cabbage.png"
+                         alt="Fresh cabbage heads at Ha-Ntate Tladi">
+                    <div class="product-card-body">
+                        <h3>Cabbage</h3>
+                        <span class="price-tag">R25 per head</span>
+                        <p>Large, firm cabbage heads &mdash; a filling,
+                           affordable side for any family meal.</p>
+                        <ul>
+                            <li>Weight: &plusmn;1.2&nbsp;kg per head</li>
+                            <li>Origin: Free State farms</li>
+                            <li>Best for: coleslaw, stews, stir-fry</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 6: ORANGES -->
+                <div class="product-card">
+                    <img src="images/oranges.png"
+                         alt="Fresh oranges at Ha-Ntate Tladi">
+                    <div class="product-card-body">
+                        <h3>Oranges</h3>
+                        <span class="price-tag">R35 per bag</span>
+                        <p>Sweet, juicy oranges &mdash; a refreshing,
+                           vitamin-rich addition to your basket.</p>
+                        <ul>
+                            <li>Weight: &plusmn;2&nbsp;kg per bag</li>
+                            <li>Origin: local suppliers</li>
+                            <li>Best for: snacking, juicing</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div><!-- end products-grid -->
+            </div><!-- end #product-list -->
+
+            <!-- REQ 5e: description list (dl/dt/dd) with information
+                 related to each product — Ch.3, p. HTML 114–116 -->
+            <div class="product-overview">
+                <h3>Product Overview</h3>
+                <dl>
+                    <dt>Potatoes</dt>
+                    <dd>R20 per bag &mdash; firm, locally sourced, ideal for roasting and boiling.</dd>
+                    <dt>Onions</dt>
+                    <dd>R20 per bag &mdash; crisp brown onions for everyday cooking.</dd>
+                    <dt>Tomatoes</dt>
+                    <dd>R30 per bag &mdash; ripe and juicy, checked daily for freshness.</dd>
+                    <dt>Chillies</dt>
+                    <dd>R10 per pack &mdash; fresh green chillies, red chillies in season.</dd>
+                    <dt>Cabbage</dt>
+                    <dd>R25 per head &mdash; large, firm heads, great for family meals.</dd>
+                    <dt>Oranges</dt>
+                    <dd>R35 per bag &mdash; sweet, juicy and vitamin-rich.</dd>
+                </dl>
+            </div>
+
+            <!-- REQ 5f: link to a website related to the business,
+                 styled with the external-link class — Ch.4, p. HTML 183–185 -->
+            <p>Want to see where vendors like Ntate Tladi get their fresh stock? Check out the official wholesale supplier website:
+               <a href="https://kingfresh.co.za/"
+                  class="external-link"
+                  target="_blank"
+                  rel="noopener noreferrer">kingfresh &mdash; Wholesale suppliers</a>.</p>
+
+            <!-- REQ 5h (CSS req 9h): #price-table id selector -->
+            <div id="price-table">
+            <!-- PRICE TABLE — Ch.8, p. HTML 403–415 -->
+            <table>
+                <caption>Ha-Ntate Tladi &mdash; Full Price List (2026)</caption>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Potatoes</td>
+                        <td>Fresh local potatoes, firm &amp; clean</td>
+                        <td>R20</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>Onions</td>
+                        <td>Crisp brown onions, locally sourced</td>
+                        <td>R20</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>Tomatoes</td>
+                        <td>Ripe, unblemished tomatoes</td>
+                        <td>R30</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>Chillies</td>
+                        <td>Fresh green chillies</td>
+                        <td>R10</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>Cabbage</td>
+                        <td>Large, firm cabbage heads</td>
+                        <td>R25</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>Oranges</td>
+                        <td>Sweet, juicy oranges</td>
+                        <td>R35</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>Parcel Counter</td>
+                        <td>Leave your bags safely while you shop</td>
+                        <td>R5 per person</td>
+                        <td>Daily</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div><!-- end #price-table -->
+
+            <!-- PARCEL COUNTER SERVICE — img src alt — Ch.3, p. HTML 92–97 -->
+            <div class="parcel-service">
+                <h3>Our Parcel Counter</h3>
+                <img src="images/parcel.jpg"
+                     alt="Bags of onions and potatoes safely stored at the Ha-Ntate Tladi parcel counter">
+                <p>Shop with both hands free. Leave your bags safely at
+                   our parcel counter for just R5 per person while you
+                   walk between Maluti Crescent Mall and Setsing Plaza.</p>
+            </div>
+
+            <br>
+            <!-- relative link — Ch.3, p. HTML 103–104 -->
+            <a href="registration.html" class="action">Register for Updates</a>
+
+        </div><!-- end products-section -->
+
+    </main>
+
+    <!-- REQ 5g: footer contact details with special characters — Ch.2, p. HTML 55–58, 66 -->
+    <footer>
+        <p>&copy; 2026 Ha-Ntate Tladi. All Rights Reserved.</p>
+        <p>Mampoi Road &amp; Nkahloleng Road, Phuthaditjhaba-A, 9869</p>
+        <p>
+            <a href="tel:+27632107292" class="tel-link">&#9742;&nbsp;063 210 7292</a>
+            &nbsp;|&nbsp;
+            <a href="mailto:22297510@mylife.unisa.ac.za" class="mail-link">&#9993;&nbsp;22297510@mylife.unisa.ac.za</a>
+        </p>
+    </footer>
+
+</div><!-- end #container -->
+</body>
+</html>

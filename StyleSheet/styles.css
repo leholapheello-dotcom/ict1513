@@ -1,0 +1,1292 @@
+/* ================================================================
+   styles.css  —  Ha-Ntate Tladi Vegetable Vendor Website
+   Student: Lehola Pheello Nicolin  |  No: 22297510
+   Module: ICT1513 — Assessment 5, extended for Assessment 8
+   (Practical Project — Progress Report 2)
+
+   Rules carried over from Assessment 5 are labelled with the exact
+   letter of requirement 9 (a–w) that they satisfy. New rules added
+   for Assessment 8 are labelled "A8-REQ" and quote the relevant
+   bullet from the Assessment 8 requirements document, plus the page
+   in Minnick, J. (2021). Responsive Web Design with HTML 5 & CSS
+   (9th ed.). Cengage Learning, that the technique is drawn from.
+
+   Colour Palette — Light Vegetable Theme
+   --veg-carrot:   #f4a035   warm carrot orange  (primary accent)
+   --veg-leaf:     #7cb87a   fresh leafy green   (secondary)
+   --veg-leaf-lt:  #b2d8b0   light leaf green    (borders/hovers)
+   --veg-cream:    #fdf6e3   creamy corn/onion   (section bg)
+   --veg-yellow:   #fde68a   soft corn yellow    (highlights)
+   --veg-tomato:   #e8604c   tomato red          (active/price)
+   --veg-soil:     #6b4f2a   earth brown         (header/footer)
+   --veg-sky:      #e3f2fd   light blue          (page bg)
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9a — CSS Reset
+   Removes browser default margin/padding and normalises box-sizing
+   so every element starts from the same baseline.
+   Ch.4, p. HTML 190–191
+   ---------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------------------------------------------
+   A8-REQ — "Update the CSS reset style rule in the style sheet to
+   add the figure and figcaption selectors."
+   The universal selector above already zeroes every element's
+   margin/padding, but figure/figcaption are called out explicitly
+   here (as the textbook's own reset list does) because browsers
+   ship figure with extra default margin that is easy to overlook.
+   Ch.3, p. HTML 97–99.
+   ---------------------------------------------------------------- */
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9b — Change the background colour of the body tag
+   Ch.4, p. HTML 157–158
+   ---------------------------------------------------------------- */
+body {
+    background-color: #e3f2fd;   /* body background colour — REQ 9b */
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #2c2c2c;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9c — Position the elements
+   #container centres the whole page; header/nav/main/footer are
+   positioned into a single-column flow using float + clear so each
+   section stacks in the correct place (Ch.4, p. HTML 156, 162–165).
+   ---------------------------------------------------------------- */
+#container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;               /* position container centrally — REQ 9c */
+    background-color: #ffffff;
+}
+
+/* header positioned to span full width, floated so nav clears it — REQ 9c */
+header {
+    position: sticky;   /* also used again for REQ 9m — Sticky Header, see below */
+    top: 0;
+    z-index: 10;
+    float: left;
+    width: 100%;
+    background-color: #6b4f2a;
+    color: #ffffff;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+}
+
+header img.logo {
+    height: 110px;
+    width: 110px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.header-text {
+    padding: 0;
+    text-align: center;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+    font-size: 2em;
+    color: #fde68a;
+    letter-spacing: 2px;
+}
+
+header p.tagline {
+    font-style: italic;
+    color: #f5cfa0;
+    font-size: 1em;
+    margin-top: 4px;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9m — Create a Sticky Header
+   position: sticky (set above on the header rule) keeps the header
+   fixed to the top of the viewport as the visitor scrolls down the
+   page. Ch.5, p. HTML 240–242 (positioning techniques).
+   ---------------------------------------------------------------- */
+/* (rule merged into the header selector above so the header keeps
+   ONE position value, per the "id/element can only have one
+   position" rule taught in Ch.5 — comment kept here so the sticky
+   requirement is easy for the marker to find). */
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9d — Style the Navigation Using CSS
+   Ch.4, p. HTML 163–170
+   ---------------------------------------------------------------- */
+nav {
+    float: right;                 /* positioned under header — REQ 9c/9d */
+    width: 100%;
+    background-color: #f4a035;
+}
+
+/* nav ul — Ch.4, p. HTML 169 */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9n — Remove the top border for the nav li style rule
+   The textbook's default nav li (Ch.4, Fig 4-44/4-45) includes a
+   border-top; this rule explicitly sets it to none so the navigation
+   bar renders as one clean, unbroken bar.
+   ---------------------------------------------------------------- */
+nav li {
+    display: block;
+    flex: 1;
+    font-size: 1em;
+    border-top: none;   /* REQ 9n — top border removed */
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9o — Edit the nav li a Style Rule
+   Modified from the book's basic version: added letter-spacing,
+   uppercase text-transform and a bold weight so links stand out
+   as clickable navigation buttons rather than plain text.
+   Ch.4, p. HTML 170
+   ---------------------------------------------------------------- */
+nav li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.75em 0;
+    text-decoration: none;
+    font-weight: bold;              /* edited — REQ 9o */
+    text-transform: uppercase;      /* edited — REQ 9o */
+    font-size: 0.9em;
+    letter-spacing: 0.5px;          /* edited — REQ 9o */
+    width: 100%;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* hover pseudo-class — Ch.6, p. HTML 316–318 */
+nav li a:hover {
+    background-color: #e8884a;
+    color: #ffffff;
+}
+
+nav li a.active {
+    background-color: #c0622a;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9f — Add a declaration to specify the background
+   colour and padding, and increase the font size for the main element
+   Ch.4, p. HTML 163–165
+   ---------------------------------------------------------------- */
+main {
+    clear: left;
+    background-color: #ffffff;    /* REQ 9f — main background colour */
+    padding: 20px 0 10px;         /* REQ 9f — main padding */
+    font-size: 1.05em;            /* REQ 9f — increased font size */
+    min-height: 400px;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9r — Modify the style rule for the main element
+   A second pass over the main rule: adds a soft top border and a
+   max page width for large screens so text does not stretch too
+   wide to read comfortably. Ch.5, p. HTML 232–234.
+   ---------------------------------------------------------------- */
+main {
+    border-top: 4px solid #f4a035;   /* REQ 9r — modification 1 */
+    line-height: 1.7;                /* REQ 9r — modification 2 */
+}
+
+main h2 {
+    font-family: Georgia, serif;
+    color: #6b4f2a;
+    font-size: 1.6em;
+    padding: 10px 30px 6px;
+    border-bottom: 3px solid #f4a035;
+    margin-bottom: 16px;
+}
+
+main h3 {
+    color: #7cb87a;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+main p {
+    margin-bottom: 12px;
+    padding: 0 30px;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9e — Make images responsive
+   max-width:100% + height:auto lets every img shrink to fit its
+   parent on small screens instead of overflowing. Ch.5, p. HTML 236.
+   ---------------------------------------------------------------- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9s — Add a style rule for the round class
+   Turns any image (e.g. the logo) into a circle. Ch.6, p. HTML 300–302
+   (border-radius property).
+   ---------------------------------------------------------------- */
+.round {
+    border-radius: 50%;
+}
+
+/* ----------------------------------------------------------------
+   A8-REQ — "Create a style rule for the mobile class."
+   The site is built mobile-first, so .mobile is visible by default;
+   it is switched off again inside the tablet media query below once
+   there is enough room to show the fuller .tablet-desktop content
+   instead ("show and hide content for a tablet viewport").
+   ---------------------------------------------------------------- */
+.mobile {
+    display: block;
+    background-color: #fdf6e3;
+    border-left: 4px solid #f4a035;
+    padding: 16px 20px;
+    margin: 16px 30px;
+}
+
+/* A8-REQ — text shadow on the heading 3 inside the mobile div */
+.mobile h3 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.mobile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ----------------------------------------------------------------
+   A8-REQ — "Add a style rule for the tablet-desktop class."
+   Hidden by default on mobile; revealed again once the tablet media
+   query switches it on, taking the place of .mobile.
+   ---------------------------------------------------------------- */
+.tablet-desktop {
+    display: none;
+    background-color: #fdf6e3;
+    border-left: 4px solid #7cb87a;
+    padding: 16px 20px;
+    margin: 16px 30px;
+}
+
+/* ----------------------------------------------------------------
+   HERO SECTION (index.html)
+   ---------------------------------------------------------------- */
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-height: 420px;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(107, 79, 42, 0.40);
+    padding: 22px 30px;
+}
+
+.hero-overlay h2 {
+    font-family: Georgia, serif;
+    color: #fde68a;
+    font-size: 1.9em;
+    border: none;
+    padding: 0;
+    margin-bottom: 6px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.75);
+}
+
+.hero-overlay p {
+    color: #fdf6e3;
+    padding: 0;
+    font-size: 1.05em;
+    margin: 0 0 14px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.70);
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9j — Style the action class
+   Ch.4, p. HTML 183–185
+   ---------------------------------------------------------------- */
+.action {
+    display: inline-block;
+    background-color: #f4a035;
+    color: #ffffff;
+    padding: 10px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.action:hover {
+    background-color: #fde68a;
+    color: #6b4f2a;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9k — Style the external-link class
+   Used on the products page to visually mark a link that leaves
+   the site, including a small "opens elsewhere" arrow character.
+   Ch.4, p. HTML 183–185 (class selectors).
+   ---------------------------------------------------------------- */
+.external-link {
+    color: #6b4f2a;
+    font-weight: bold;
+    text-decoration: underline;
+    border-bottom: 2px dotted #7cb87a;
+}
+
+.external-link::after {
+    content: " \2197";   /* small north-east arrow — shows link leaves the site */
+    font-weight: normal;
+}
+
+.external-link:hover {
+    color: #c0622a;
+}
+
+/* ----------------------------------------------------------------
+   ABOUT SECTION (index.html)
+   ---------------------------------------------------------------- */
+.about-section {
+    padding: 24px 30px;
+    background-color: #fdf6e3;
+    border-top: 1px solid #f5cfa0;
+    border-bottom: 1px solid #f5cfa0;
+}
+
+.about-section h2 {
+    padding: 0 0 6px;
+    border-bottom: 3px solid #f4a035;
+    margin-bottom: 14px;
+}
+
+.about-section p {
+    padding: 0;
+}
+
+/* ----------------------------------------------------------------
+   HIGHLIGHTS (why shop with us) — unordered list — Ch.3, p. HTML 112–114
+   ---------------------------------------------------------------- */
+.highlights {
+    padding: 24px 30px;
+}
+
+.highlights ul {
+    list-style: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.highlights ul li {
+    background-color: #fdf6e3;
+    padding: 12px 16px;
+    border-left: 4px solid #7cb87a;
+    font-size: 0.95em;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9h — Create style rules for ids on the products page
+   #product-list wraps the six product cards; #price-table wraps the
+   price-list table. Ch.4, p. HTML 156, 162 (id selectors).
+   ---------------------------------------------------------------- */
+#product-list {
+    padding: 10px 30px 10px;
+}
+
+#price-table {
+    padding: 0 30px 30px;
+}
+
+.products-section > p {
+    padding: 0 30px;
+}
+
+/* ----------------------------------------------------------------
+   A8-REQ — styling for the three <article> elements and the
+   trailing <aside> added to products.html within <main class="grid">.
+   These rules apply at every viewport; the grid COLUMN behaviour
+   itself only switches on inside the tablet/desktop media queries
+   further down, once main.grid becomes display:grid.
+   ---------------------------------------------------------------- */
+
+/* A8-REQ — "Create a style rule to apply padding to the article
+   elements." */
+.product-highlight {
+    padding: 16px;
+    background-color: #ffffff;
+    border: 1px solid #f5cfa0;
+    margin: 0 30px 16px;
+}
+
+/* A8-REQ — "Create a style rule to center-align the heading 3
+   elements within each article element." +
+   "Create a new style rule to style to increase the size of the
+   heading 3 elements within the article elements." */
+.product-highlight h3 {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+/* A8-REQ — "Create another style rule that center-aligns each image
+   within its parent article element." */
+.product-highlight img {
+    display: block;
+    margin: 0 auto 10px;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* A8-REQ — "Create another style rule that applies a background
+   colour to just the second article element within the main parent
+   element." (:nth-of-type(2) targets only the middle article) */
+.product-highlight:nth-of-type(2) {
+    background-color: #fdf6e3;
+}
+
+/* A8-REQ — "Create a final style rule that applies left margin to
+   the unordered lists within the article elements." */
+.product-highlight ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+/* A8-REQ — "Create a new style rule to style the aside element." */
+.product-aside {
+    background-color: #6b4f2a;
+    color: #fdf6e3;
+    padding: 16px;
+    margin: 0 30px 16px;
+}
+
+.product-aside h3 {
+    color: #fde68a;
+    margin-bottom: 6px;
+}
+
+/* A8-REQ — "Create a style rule that spans the three columns."
+   Only takes visual effect once main.grid is display:grid (tablet
+   and desktop media queries) — the aside then stretches across every
+   column instead of sitting in just one. */
+.product-aside {
+    grid-column: 1 / -1;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9u — Create a style rule to specify the number of
+   columns you want to use in the grid layout
+   Three columns for the product cards on wide screens.
+   Ch.6 (CSS Grid), reinforced in Ch.5 responsive layout, p. HTML 236–240.
+   ---------------------------------------------------------------- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* REQ 9u — 3-column grid */
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.product-card {
+    border: 1px solid #f5cfa0;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fdf6e3;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9t — Modify the style rule for the images in the
+   products page to use a single column
+   Inside each product card the image sits alone on its own row
+   (single column) above the text, instead of side-by-side with it.
+   Ch.5, p. HTML 236–238.
+   ---------------------------------------------------------------- */
+.product-card img {
+    display: block;               /* REQ 9t — single column: image on its own row */
+    width: 100%;
+    max-width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.product-card-body {
+    padding: 14px 16px;
+}
+
+.product-card h3 {
+    color: #6b4f2a;
+    font-size: 1.15em;
+    margin-bottom: 6px;
+}
+
+.price-tag {
+    display: inline-block;
+    background-color: #e8604c;
+    color: #ffffff;
+    padding: 4px 14px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.product-card ul {
+    margin: 8px 0 0 18px;
+    font-size: 0.9em;
+}
+
+/* description list summarising every product — Ch.3, p. HTML 114–116 */
+.product-overview dl {
+    margin: 10px 30px 0;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 4px 12px;
+}
+
+.product-overview dt {
+    font-weight: bold;
+    color: #6b4f2a;
+}
+
+.product-overview dd {
+    color: #2c2c2c;
+}
+
+/* ----------------------------------------------------------------
+   TABLE — price list — Ch.8, p. HTML 403–415
+   ---------------------------------------------------------------- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 1em;
+    color: #6b4f2a;
+    text-align: left;
+    padding: 8px 0;
+}
+
+th {
+    background-color: #f4a035;
+    color: #ffffff;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+td {
+    padding: 9px 14px;
+    border-bottom: 1px solid #f5cfa0;
+}
+
+tr:nth-child(even) {
+    background-color: #fdf6e3;
+}
+
+/* ----------------------------------------------------------------
+   PARCEL COUNTER SERVICE SECTION (products.html)
+   ---------------------------------------------------------------- */
+.parcel-service {
+    padding: 24px 30px;
+    margin-top: 10px;
+    background-color: #fdf6e3;
+    border-top: 1px solid #f5cfa0;
+    border-bottom: 1px solid #f5cfa0;
+}
+
+.parcel-service h3 {
+    color: #6b4f2a;
+    margin-bottom: 10px;
+}
+
+.parcel-service img {
+    max-width: 320px;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: 2px solid #7cb87a;
+    margin-bottom: 10px;
+}
+
+/* ----------------------------------------------------------------
+   STAFF PAGE — 3-column grid container (Requirement 6d)
+   This is the *layout* container required by 6d; REQUIREMENT 9u's
+   column-count rule above is reused here so the whole site keeps
+   the same "3 columns" grid language.
+   ---------------------------------------------------------------- */
+.staff-section {
+    padding: 16px 30px 30px;
+}
+
+.staff-section aside {
+    background-color: #fdf6e3;
+    border-left: 4px solid #7cb87a;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+
+.staff-section aside h2 {
+    padding: 0 0 6px;
+    border-bottom: none;
+    margin-bottom: 8px;
+}
+
+/* the 3-column grid container required in 6d */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9v — Create a style rule for the figure element
+   Ch.3, p. HTML 97–99 (figure used to group an image with its caption)
+   ---------------------------------------------------------------- */
+figure {
+    background-color: #fdf6e3;
+    border: 1px solid #f5cfa0;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9w — Create a style rule for the figure caption element
+   Ch.3, p. HTML 97–99
+   ---------------------------------------------------------------- */
+figcaption {
+    font-size: 0.85em;
+    color: #6b4f2a;
+    font-style: italic;
+    padding-top: 8px;
+}
+
+.staff-card {
+    display: flex;
+    gap: 24px;
+    background-color: #fdf6e3;
+    border: 1px solid #f5cfa0;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.staff-card img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* description list — Ch.3, p. HTML 114–116 */
+dl {
+    margin: 10px 0;
+}
+
+dt {
+    font-weight: bold;
+    color: #6b4f2a;
+    margin-top: 8px;
+}
+
+dd {
+    margin-left: 20px;
+    color: #2c2c2c;
+}
+
+/* ordered list — Ch.3, p. HTML 116–118 */
+ol {
+    margin-left: 20px;
+    margin-top: 6px;
+}
+
+ol li {
+    margin-bottom: 6px;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9i — Create style rules for ids on the contact page
+   #contact wraps the contact details/map; #form wraps the enquiry
+   form. Ch.4, p. HTML 156, 162, 182 (id selectors).
+   ---------------------------------------------------------------- */
+#contact {
+    padding: 16px 30px 24px;
+}
+
+.contact-list {
+    list-style: none;
+    margin: 14px 0;
+}
+
+.contact-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f5cfa0;
+    font-size: 1em;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-list a {
+    color: #c0622a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9q — Style Rule for the hours Class
+   Applied to the ul.hours element listing business trading hours.
+   Ch.3, p. HTML 112–114 (list styling).
+   ---------------------------------------------------------------- */
+.hours {
+    list-style: none;
+    background-color: #fdf6e3;
+    border: 1px solid #f5cfa0;
+    padding: 14px 18px;
+    margin: 12px 0 20px;
+}
+
+.hours li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dashed #f5cfa0;
+}
+
+.hours li:last-child {
+    border-bottom: none;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9l — Style the map class
+   Applied to the iframe/container embedding the Google map so it
+   sits neatly inside the page with a border. Ch.3, p. HTML 118–120.
+   ---------------------------------------------------------------- */
+.map {
+    width: 100%;
+    border: 2px solid #7cb87a;
+    margin-top: 10px;
+    display: block;
+    min-height: 320px;
+}
+
+/* ----------------------------------------------------------------
+   FORM STYLES — Ch.8, p. HTML 423–444
+   ---------------------------------------------------------------- */
+#form {
+    padding: 10px 30px 30px;
+}
+
+#form h2 {
+    text-align: left;
+    padding: 10px 0 6px;
+    border-bottom: 3px solid #f4a035;
+    margin-bottom: 16px;
+}
+
+form {
+    max-width: 600px;
+}
+
+fieldset {
+    border: 1px solid #f5cfa0;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    background-color: #fdf6e3;
+}
+
+legend {
+    font-weight: bold;
+    color: #6b4f2a;
+    padding: 0 8px;
+    font-size: 1em;
+}
+
+label {
+    display: block;
+    padding-top: 6px;
+    font-weight: bold;
+    color: #333333;
+    font-size: 0.95em;
+    margin-bottom: 3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f5cfa0;
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 1em;
+    background-color: #ffffff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #7cb87a;
+}
+
+label.check-label {
+    display: inline;
+    font-weight: normal;
+    margin-left: 6px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-bottom: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    background-color: #f4a035;
+    color: #ffffff;
+    border: none;
+    padding: 10px 28px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    width: auto;
+}
+
+.btn:hover {
+    background-color: #c0622a;
+}
+
+/* ----------------------------------------------------------------
+   REQUIREMENT 9g — Create a style rule for the footer element
+   REQUIREMENT 9p — Add style rules for the tel-link class
+   The footer holds the business contact details required on every
+   page; .tel-link/.mail-link style the phone/e-mail links that use
+   the small phone/envelope characters. Ch.4, p. HTML 176–177.
+   ---------------------------------------------------------------- */
+footer {
+    clear: left;
+    background-color: #6b4f2a;    /* REQ 9g — footer style rule */
+    color: #f5cfa0;
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 0.9em;
+    line-height: 1.9;
+}
+
+footer a {
+    color: #fde68a;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* tel-link class — used on every phone number link, in the footer
+   and on the contact page — REQUIREMENT 9p */
+.tel-link,
+.mail-link {
+    font-weight: bold;
+    white-space: nowrap;
+    /* extra symbol-font fallbacks so the small phone/envelope
+       characters display correctly across different browsers */
+    font-family: "Segoe UI Symbol", "Noto Sans Symbols",
+                 Symbola, "DejaVu Sans", Calibri, Arial, sans-serif;
+}
+
+/* ----------------------------------------------------------------
+   GROUPED SELECTOR — Ch.4, p. HTML 175–176
+   ---------------------------------------------------------------- */
+header, nav, footer {
+    font-family: Calibri, Arial, sans-serif;
+}
+
+/* ================================================================
+   A8-REQ — RESPONSIVE BREAKPOINTS
+   Mobile-first: the un-queried rules above are the mobile styles.
+   Three explicit breakpoints follow — tablet, desktop, and large
+   desktop — plus a dedicated print stylesheet. Ch.5, p. HTML 225–248.
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   MOBILE VIEWPORT — up to 767px
+   (supports REQ 9e responsive images and REQ 9u grid columns
+   collapsing on small screens, carried over from Assessment 5)
+   Ch.5, p. HTML 225–232
+   ---------------------------------------------------------------- */
+@media screen and (max-width: 767px) {
+
+    /* A8-REQ — "Edit the nav style rule for mobile viewports." */
+    nav {
+        float: none;
+        width: 100%;
+    }
+
+    /* A8-REQ — "Edit the nav ul style rule for mobile viewports." */
+    nav ul {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    /* A8-REQ — "Edit the nav li style rule for mobile viewports." */
+    nav li {
+        display: block;
+        border-top: 1px solid #e8884a;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
+    .highlights ul {
+        grid-template-columns: 1fr;
+    }
+    .staff-card {
+        flex-direction: column;
+    }
+    .staff-card img {
+        width: 100%;
+        height: 240px;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+        position: static;   /* release the sticky header on very small screens */
+    }
+    header img.logo {
+        height: 90px;
+        width: 90px;
+    }
+    .product-overview dl {
+        grid-template-columns: 1fr;
+    }
+    .hours li {
+        flex-direction: column;
+    }
+}
+
+/* ----------------------------------------------------------------
+   TABLET VIEWPORT — 768px to 1023px
+   A8-REQ — "Create a media query to target tablet devices."
+   Ch.5, p. HTML 229–232
+   ---------------------------------------------------------------- */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .staff-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* A8-REQ — "Show and hide content for a tablet viewport."
+       Swap the mobile-only callout for the fuller tablet/desktop
+       copy now that there is more screen space available. */
+    .mobile {
+        display: none;
+    }
+    .tablet-desktop {
+        display: block;
+    }
+
+    /* A8-REQ — "Remove a sticky position for the header for a
+       tablet viewport." */
+    header {
+        position: static;
+    }
+
+    /* A8-REQ — "Add a new style rule to display the list items in a
+       single horizontal line and display the border between each
+       link." */
+    nav ul {
+        flex-direction: row;
+    }
+    nav li {
+        border-top: none;
+        border-left: 1px solid #f5cfa0;
+    }
+    nav li:first-child {
+        border-left: none;
+    }
+
+    /* A8-REQ — "Create a new selector for the main ul and then add a
+       style rule to apply margin to the bottom and left of the
+       unordered list." (targets a plain ul placed directly in main,
+       e.g. the "Why Shop With Us" list on index.html) */
+    main > ul {
+        margin: 0 0 20px 20px;
+    }
+
+    /* A8-REQ — "Create a new style rule within the tablet media
+       query to use the default height and width of the embedded
+       map." Un-does the fixed 100%/320px sizing so the iframe falls
+       back to its own default dimensions. */
+    .map {
+        width: auto;
+        height: auto;
+        min-height: 0;
+    }
+
+    /* A8-REQ — "Update the style sheet for the tablet viewport to
+       use the CSS grid and create a multiple-column layout."
+       (applies to the new main.grid structure on products.html) */
+    main.grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        align-items: start;
+    }
+    main.grid .products-section,
+    main.grid .mobile,
+    main.grid .tablet-desktop {
+        grid-column: 1 / -1;
+    }
+
+    /* A8-REQ — "Add a linear gradient to the div element with the id
+       attribute created in the product.html page for the tablet
+       viewport." (#product-list is the id-selected div wrapping the
+       product cards on products.html) */
+    #product-list {
+        background: linear-gradient(180deg, #fdf6e3 0%, #ffffff 100%);
+    }
+}
+
+/* ----------------------------------------------------------------
+   DESKTOP VIEWPORT — 1024px and up
+   A8-REQ — "Create a media query for a desktop viewport." +
+   "Determine the viewport width for the desktop viewport."
+   1024px is used because it is the smallest common landscape-tablet
+   /small-laptop width (e.g. iPad landscape), matching the point at
+   which the site has room for a single-row header + nav.
+   Ch.5, p. HTML 232–236.
+   ---------------------------------------------------------------- */
+@media screen and (min-width: 1024px) {
+
+    /* A8-REQ — "Create a style rule for the header element in the
+       desktop media query." Lays header out in a row so the nav can
+       sit to its right. */
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    header {
+        flex-direction: row;
+        justify-content: flex-start;
+        width: auto;
+        flex: 0 0 auto;
+        padding: 12px 24px;
+        position: static;
+    }
+    header img.logo {
+        height: 80px;
+        width: 80px;
+    }
+    .header-text {
+        text-align: left;
+    }
+
+    /* A8-REQ — "Style the navigation area to appear as a single
+       unified element, to the right of the header element, with
+       navigation links evenly distributed within the area for a
+       desktop viewport." */
+    nav {
+        flex: 1 1 auto;
+        width: auto;
+        display: flex;
+        align-items: center;
+        background-color: #f4a035;
+    }
+
+    /* A8-REQ — "Style the unordered list in the navigation area for
+       a desktop viewport." */
+    nav ul {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    /* A8-REQ — "Style the list item links in the navigation area for
+       a desktop viewport." */
+    nav li a {
+        padding: 1em 1.2em;
+        font-size: 1em;
+    }
+
+    /* A8-REQ — "Add a new style rule for the hover pseudo-class to
+       style the links within the navigation area for the desktop
+       viewport." A distinct desktop hover treatment (underline
+       instead of a solid fill). */
+    nav li a:hover {
+        background-color: transparent;
+        color: #fde68a;
+        text-decoration: underline;
+    }
+
+    /* A8-REQ — "Style the main element for a desktop viewport." */
+    main {
+        flex: 1 1 100%;
+        padding: 30px 50px 20px;
+    }
+
+    /* A8-REQ — "Style heading elements within the main element for a
+       desktop viewport." */
+    main h2 {
+        font-size: 1.9em;
+    }
+    main h3 {
+        font-size: 1.25em;
+    }
+
+    /* A8-REQ — "Create a Multiple-Column Layout for a Desktop
+       Viewport." (main.grid on products.html moves to 3 columns) */
+    main.grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    footer {
+        flex: 1 1 100%;
+    }
+
+    /* A8-REQ — "Update the style sheet for the desktop viewport to
+       style the new class attributes on the home page." Lay the
+       tablet-desktop content out with a little more breathing room
+       now that a full row is available. */
+    .tablet-desktop {
+        padding: 24px 30px;
+    }
+}
+
+/* ----------------------------------------------------------------
+   LARGE DESKTOP VIEWPORT — 1400px and up
+   A8-REQ — "Create a Media Query for Large Desktop Viewports."
+   Ch.5, p. HTML 236–238
+   ---------------------------------------------------------------- */
+@media screen and (min-width: 1400px) {
+    #container {
+        max-width: 1300px;
+    }
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    main h2 {
+        font-size: 2.1em;
+    }
+}
+
+/* ----------------------------------------------------------------
+   PRINT STYLESHEET
+   A8-REQ — "Create a media query for print."
+   Strips navigation, decorative images and the enquiry form so a
+   printed copy shows only the readable business content.
+   Ch.5, p. HTML 246–248
+   ---------------------------------------------------------------- */
+@media print {
+    nav,
+    .hero img,
+    .mobile,
+    .tablet-desktop,
+    #form,
+    .map,
+    .action {
+        display: none;
+    }
+    body {
+        background-color: #ffffff;
+        color: #000000;
+    }
+    #container {
+        width: 100%;
+        max-width: none;
+    }
+    header {
+        position: static;
+        background-color: #ffffff;
+        color: #000000;
+        border-bottom: 2px solid #000000;
+    }
+    header h1 {
+        color: #000000;
+    }
+    header p.tagline {
+        color: #333333;
+    }
+    a {
+        color: #000000;
+        text-decoration: underline;
+    }
+    footer {
+        background-color: #ffffff;
+        color: #000000;
+        border-top: 1px solid #000000;
+    }
+}

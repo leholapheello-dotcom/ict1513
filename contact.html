@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!-- ================================================================
+     contact.html  —  Contact Page
+     Ha-Ntate Tladi Vegetable Vendor
+     Student: Lehola Pheello Nicolin  |  No: 22297510
+     Module:  ICT1513 — Assessment 5
+
+     Every comment below is tagged "REQ 7x" so it can be matched
+     directly against Assessment 5, requirement 7 (a–g).
+
+     Address sourced from signed permission letter (07-05-2026):
+     Mampoi Road & Nkahloleng Road, Phuthaditjhaba-A, 9869
+     Business phone: 063 210 7292
+
+     CODE SOURCES — Minnick, J. (2021). Responsive Web Design
+     with HTML 5 & CSS (9th ed.). Cengage Learning.
+     ┌──────────────────────────────────────────────────────┐
+     │ Element                  │ Book page                 │
+     ├──────────────────────────────────────────────────────┤
+     │ DOCTYPE / html / head    │ Ch.1, p. HTML 31–34       │
+     │ meta viewport            │ Ch.5, p. HTML 227–228     │
+     │ link to CSS              │ Ch.4, p. HTML 159–160     │
+     │ header/nav/main/footer   │ Ch.2, p. HTML 55–58       │
+     │ h1, h2, h3               │ Ch.2, p. HTML 61–63       │
+     │ p paragraph              │ Ch.2, p. HTML 69–70       │
+     │ ul / li (hours class)    │ Ch.3, p. HTML 112–114     │
+     │ a href mailto:           │ Ch.3, p. HTML 104         │
+     │ a href tel:              │ Ch.3, p. HTML 104         │
+     │ iframe (embedded map)    │ Ch.3, p. HTML 118–120     │
+     │ nav ul li a              │ Ch.4, p. HTML 166–170     │
+     │ #contact id selector     │ Ch.4, p. HTML 182         │
+     │ #container               │ Ch.4, p. HTML 156, 162    │
+     │ form / fieldset / legend │ Ch.8, p. HTML 423–432     │
+     │ label / input / textarea │ Ch.8, p. HTML 429–438     │
+     │ input type="submit" .btn │ Ch.8, p. HTML 438         │
+     │ required attribute       │ Ch.8, p. HTML 430–431     │
+     │ &copy; &amp; &mdash;     │ Ch.2, p. HTML 63–66       │
+     └──────────────────────────────────────────────────────┘
+     ================================================================ -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ha-Ntate Tladi &mdash; Contact</title>
+    <!-- A8-REQ: Add a favicon to every HTML file in the project -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="StyleSheet/styles.css">
+</head>
+<body>
+
+<div id="container">
+
+    <!-- HEADER — Ch.2, p. HTML 55–58 -->
+    <header>
+        <!-- REQ 7a: business name in header -->
+        <div class="header-text">
+            <h1>Ha-Ntate Tladi</h1>
+            <p class="tagline">Fresh or Fokol &mdash; Phuthaditjhaba&rsquo;s freshest vegetables</p>
+        </div>
+        <!-- REQ 7b: logo image placed below the h1 heading — Ch.3, p. HTML 92–97 -->
+        <img src="images/logo.png" alt="Ha-Ntate Tladi logo" class="logo round">
+    </header>
+
+    <!-- REQ 7c: navigation bar linking to all pages, unordered list — Ch.4, p. HTML 166–170 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN — Ch.2, p. HTML 55–58 -->
+    <main>
+
+        <!-- #contact id selector — Ch.4, p. HTML 182 (Figure 4–50) -->
+        <div id="contact">
+
+            <!-- h2 — Ch.2, p. HTML 61–62 -->
+            <h2>Contact Us</h2>
+
+            <!-- p — Ch.2, p. HTML 69–70 -->
+            <p>Find us at our stall near the malls in Phuthaditjhaba,
+               or reach us using the details below. We are happy to
+               answer any questions about our products or services.</p>
+
+            <!-- A8-REQ: "Modify the contact page to add essential
+                 content for a mobile user." A single, large tap-to-call
+                 heading so a visitor on a phone can reach the stall in
+                 one tap; class="mobile" is reused from the home page so
+                 both share the same style rule (styles.css). -->
+            <h4 class="mobile">
+                <a href="tel:+27632107292" class="tel-link">&#9742;&nbsp;Tap to Call: 063 210 7292</a>
+            </h4>
+
+            <!-- ========================================================
+                 A8-REQ: "Add section elements to the Contact Us page to
+                 group content." Two section elements group the page's
+                 two natural clusters of information: contact/hours
+                 details, and the embedded map — Ch.2, p. HTML 55–58
+                 (section is a semantic HTML5 grouping element).
+                 ======================================================== -->
+            <section class="contact-details">
+
+                <!-- h3 — Ch.2, p. HTML 61–62 -->
+                <h3>Our Contact Details</h3>
+
+                <!-- REQ 7e: main tag contains the phone number, email
+                     address, and street address, with phone and email
+                     linked — Ch.3, p. HTML 104 -->
+                <p>
+                    Phone:
+                    <a href="tel:+27632107292" class="tel-link">&#9742;&nbsp;063 210 7292</a>
+                    &nbsp;|&nbsp;
+                    Email:
+                    <a href="mailto:22297510@mylife.unisa.ac.za" class="mail-link">&#9993;&nbsp;22297510@mylife.unisa.ac.za</a>
+                    <br>
+                    Street Address: Mampoi Road &amp; Nkahloleng Road,
+                    Phuthaditjhaba-A, 9869, Free State
+                </p>
+
+                <!-- REQ 7d: business hours as an unordered list with
+                     class="hours" — Ch.3, p. HTML 112–114 -->
+                <h3>Trading Hours</h3>
+                <ul class="hours">
+                    <li><span>Monday &ndash; Friday</span><span>07:00 &ndash; 18:00</span></li>
+                    <li><span>Saturday</span><span>07:00 &ndash; 18:00</span></li>
+                    <li><span>Sunday</span><span>Closed</span></li>
+                    <li><span>Public Holidays</span><span>08:00 &ndash; 14:00</span></li>
+                </ul>
+
+            </section><!-- end .contact-details section -->
+
+            <section class="map-section">
+
+                <!-- h3 — Ch.2, p. HTML 61–62 -->
+                <h3>Find Us on the Map</h3>
+
+                <!-- p — Ch.2, p. HTML 69–70 -->
+                <p>We are located at the corner of Mampoi Road and
+                   Nkahloleng Road in Phuthaditjhaba, near both
+                   Maluti Crescent Mall and Setsing Plaza.</p>
+
+                <!-- REQ 7f: embedded map using the map class — Ch.3, p. HTML 118–120
+                     The textbook demonstrates embedding a Google Map
+                     using an iframe element with src, width, height,
+                     and title attributes. -->
+                <iframe
+                    class="map"
+                    src="https://maps.google.com/maps?q=Phuthaditjhaba+Free+State+South+Africa&amp;output=embed"
+                    width="100%"
+                    height="320"
+                    title="Map showing Ha-Ntate Tladi location in Phuthaditjhaba">
+                </iframe>
+
+            </section><!-- end .map-section section -->
+
+        </div><!-- end #contact -->
+
+        <!-- CONTACT FORM — Ch.8, p. HTML 423–444 -->
+        <div id="form">
+
+            <h2>Send Us a Message</h2>
+
+            <p>Use the form below to get in touch and we will
+               respond as soon as possible.</p>
+
+            <!-- form element — Ch.8, p. HTML 423–424 -->
+            <form action="#" method="post">
+
+                <!-- fieldset / legend — Ch.8, p. HTML 431–432 -->
+                <fieldset>
+                    <legend>Your Details</legend>
+
+                    <label for="cname">Full Name:</label>
+                    <input type="text"
+                           id="cname"
+                           name="cname"
+                           placeholder="Enter your full name"
+                           required>
+
+                    <label for="cemail">Email Address:</label>
+                    <input type="email"
+                           id="cemail"
+                           name="cemail"
+                           placeholder="youremail@domain.com"
+                           required>
+
+                    <label for="cphone">Phone Number (optional):</label>
+                    <input type="tel"
+                           id="cphone"
+                           name="cphone"
+                           placeholder="0XX XXX XXXX">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your Message</legend>
+
+                    <label for="cmessage">Message:</label>
+                    <textarea id="cmessage"
+                              name="cmessage"
+                              rows="6"
+                              cols="35"
+                              placeholder="Type your message here..."
+                              required></textarea>
+                </fieldset>
+
+                <input type="submit"
+                       id="submit"
+                       value="Send Message"
+                       class="btn">
+
+            </form><!-- end form -->
+
+        </div><!-- end #form -->
+
+    </main>
+
+    <!-- REQ 7g: footer contact details with special characters — Ch.2, p. HTML 55–58, 66 -->
+    <footer>
+        <p>&copy; 2026 Ha-Ntate Tladi. All Rights Reserved.</p>
+        <p>Mampoi Road &amp; Nkahloleng Road, Phuthaditjhaba-A, 9869</p>
+        <p>
+            <a href="tel:+27632107292" class="tel-link">&#9742;&nbsp;063 210 7292</a>
+            &nbsp;|&nbsp;
+            <a href="mailto:22297510@mylife.unisa.ac.za" class="mail-link">&#9993;&nbsp;22297510@mylife.unisa.ac.za</a>
+        </p>
+    </footer>
+
+</div><!-- end #container -->
+</body>
+</html>

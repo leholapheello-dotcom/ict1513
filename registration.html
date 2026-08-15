@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- ================================================================
+     registration.html  —  Customer Registration Page
+     Ha-Ntate Tladi Vegetable Vendor
+     Student: Lehola Pheello Nicolin  |  No: 22297510
+     Module:  ICT1513 — Assessment 5 (continuation of Assessment 2)
+
+     CODE SOURCES — Minnick, J. (2021). Responsive Web Design
+     with HTML 5 & CSS (9th ed.). Cengage Learning.
+     ┌──────────────────────────────────────────────────────┐
+     │ Element                  │ Book page                 │
+     ├──────────────────────────────────────────────────────┤
+     │ DOCTYPE / html / head    │ Ch.1, p. HTML 31–34       │
+     │ meta viewport            │ Ch.5, p. HTML 227–228     │
+     │ link to CSS              │ Ch.4, p. HTML 159–160     │
+     │ header/nav/main/footer   │ Ch.2, p. HTML 55–58       │
+     │ h1, h2                   │ Ch.2, p. HTML 61–63       │
+     │ p paragraph              │ Ch.2, p. HTML 69–70       │
+     │ nav ul li a              │ Ch.4, p. HTML 166–170     │
+     │ form action method       │ Ch.8, p. HTML 423–424     │
+     │ fieldset / legend        │ Ch.8, p. HTML 431–432     │
+     │ label for=""             │ Ch.8, p. HTML 429         │
+     │ input type="text"        │ Ch.8, p. HTML 423–432     │
+     │ input type="email"       │ Ch.8, p. HTML 432–433     │
+     │ input type="tel"         │ Ch.8, p. HTML 433–434     │
+     │ input type="checkbox"    │ Ch.8, p. HTML 434–435     │
+     │ select / option          │ Ch.8, p. HTML 435–437     │
+     │ textarea rows cols       │ Ch.8, p. HTML 437–438     │
+     │ input type="submit" .btn │ Ch.8, p. HTML 438         │
+     │ required attribute       │ Ch.8, p. HTML 430–431     │
+     │ placeholder attribute    │ Ch.8, Table 8–4, p.430    │
+     │ &copy; &mdash;           │ Ch.2, p. HTML 63–66       │
+     └──────────────────────────────────────────────────────┘
+     ================================================================ -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ha-Ntate Tladi &mdash; Register</title>
+    <!-- A8-REQ: Add a favicon to every HTML file in the project -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="StyleSheet/styles.css">
+</head>
+<body>
+
+<div id="container">
+
+    <!-- HEADER — Ch.2, p. HTML 55–58 -->
+    <header>
+        <img src="images/logo.png" alt="Ha-Ntate Tladi logo" class="logo round">
+        <div class="header-text">
+            <h1>Ha-Ntate Tladi</h1>
+            <p class="tagline">Fresh or Fokol &mdash; Phuthaditjhaba&rsquo;s freshest vegetables</p>
+        </div>
+    </header>
+
+    <!-- NAV — Ch.4, p. HTML 166–170 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="registration.html" class="active">Register</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN — Ch.2, p. HTML 55–58 -->
+    <main>
+
+        <!-- FORM SECTION — Ch.8, p. HTML 423–444 -->
+        <div id="form">
+
+            <h2>Customer Registration</h2>
+
+            <p>Register below to receive updates about fresh stock,
+               special offers, and seasonal produce. We will never
+               share your information with third parties.</p>
+
+            <!-- form element — Ch.8, p. HTML 423–424 -->
+            <form action="#" method="post">
+
+                <!-- FIELDSET 1 — Personal Details -->
+                <fieldset>
+                    <legend>Personal Details</legend>
+
+                    <label for="firstname">First Name:</label>
+                    <input type="text"
+                           id="firstname"
+                           name="firstname"
+                           placeholder="Enter your first name"
+                           required>
+
+                    <label for="lastname">Last Name:</label>
+                    <input type="text"
+                           id="lastname"
+                           name="lastname"
+                           placeholder="Enter your last name"
+                           required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           placeholder="youremail@domain.com"
+                           required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel"
+                           id="phone"
+                           name="phone"
+                           placeholder="0XX XXX XXXX"
+                           required>
+
+                </fieldset>
+
+                <!-- FIELDSET 2 — Interests (Checkboxes) -->
+                <fieldset>
+                    <legend>I Would Like Updates About:</legend>
+                    <p>Select all that apply:</p>
+
+                    <p>
+                        <input type="checkbox"
+                               id="cb1"
+                               name="interest"
+                               value="weekly_specials">
+                        <label for="cb1" class="check-label">Weekly Specials</label>
+                    </p>
+                    <p>
+                        <input type="checkbox"
+                               id="cb2"
+                               name="interest"
+                               value="new_stock">
+                        <label for="cb2" class="check-label">New Stock Arrivals</label>
+                    </p>
+                    <p>
+                        <input type="checkbox"
+                               id="cb3"
+                               name="interest"
+                               value="seasonal">
+                        <label for="cb3" class="check-label">Seasonal Produce</label>
+                    </p>
+                    <p>
+                        <input type="checkbox"
+                               id="cb4"
+                               name="interest"
+                               value="parcel">
+                        <label for="cb4" class="check-label">Parcel Counter Service</label>
+                    </p>
+                </fieldset>
+
+                <!-- FIELDSET 3 — How did you find us? -->
+                <fieldset>
+                    <legend>Referral Source</legend>
+                    <label for="reference">How did you find us?</label>
+                    <select name="reference" id="reference">
+                        <option value="">-- Please select --</option>
+                        <option value="walking">Walking past the stall</option>
+                        <option value="friend">Recommended by a friend</option>
+                        <option value="social">Social media</option>
+                        <option value="other">Other</option>
+                    </select>
+                </fieldset>
+
+                <!-- FIELDSET 4 — Comments -->
+                <fieldset>
+                    <legend>Additional Comments</legend>
+                    <label for="comments">Questions or comments?</label>
+                    <textarea id="comments"
+                              name="comments"
+                              rows="5"
+                              cols="35"
+                              placeholder="Type your message here..."></textarea>
+                </fieldset>
+
+                <input type="submit"
+                       id="submit"
+                       value="Register Now"
+                       class="btn">
+
+            </form><!-- end form -->
+
+        </div><!-- end #form -->
+
+    </main>
+
+    <!-- FOOTER — Ch.2, p. HTML 55–58, 66 -->
+    <footer>
+        <p>&copy; 2026 Ha-Ntate Tladi. All Rights Reserved.</p>
+        <p>Mampoi Road &amp; Nkahloleng Road, Phuthaditjhaba-A, 9869</p>
+        <p>
+            <a href="tel:+27632107292" class="tel-link">&#9742;&nbsp;063 210 7292</a>
+            &nbsp;|&nbsp;
+            <a href="mailto:22297510@mylife.unisa.ac.za" class="mail-link">&#9993;&nbsp;22297510@mylife.unisa.ac.za</a>
+        </p>
+    </footer>
+
+</div><!-- end #container -->
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- ================================================================
+     staff.html  —  Staff / Vendor Profile Page
+     Ha-Ntate Tladi Vegetable Vendor
+     Student: Lehola Pheello Nicolin  |  No: 22297510
+     Module:  ICT1513 — Assessment 5
+
+     Every comment below is tagged "REQ 6x" so it can be matched
+     directly against Assessment 5, requirement 6 (a–i).
+
+     CODE SOURCES — Minnick, J. (2021). Responsive Web Design
+     with HTML 5 & CSS (9th ed.). Cengage Learning.
+     ┌──────────────────────────────────────────────────────┐
+     │ Element                  │ Book page                 │
+     ├──────────────────────────────────────────────────────┤
+     │ DOCTYPE / html / head    │ Ch.1, p. HTML 31–34       │
+     │ meta viewport            │ Ch.5, p. HTML 227–228     │
+     │ link to CSS              │ Ch.4, p. HTML 159–160     │
+     │ header/nav/main/footer   │ Ch.2, p. HTML 55–58       │
+     │ aside                    │ Ch.2, p. HTML 57–58       │
+     │ h1, h2, h3               │ Ch.2, p. HTML 61–63       │
+     │ p paragraph              │ Ch.2, p. HTML 69–70       │
+     │ figure / figcaption      │ Ch.3, p. HTML 97–99       │
+     │ img src alt              │ Ch.3, p. HTML 92–97       │
+     │ a href (relative links)  │ Ch.3, p. HTML 103–104     │
+     │ ul / li                  │ Ch.3, p. HTML 112–114     │
+     │ ol / li (ordered list)   │ Ch.3, p. HTML 116–118     │
+     │ dl / dt / dd             │ Ch.3, p. HTML 114–116     │
+     │ nav ul li a              │ Ch.4, p. HTML 166–170     │
+     │ #container               │ Ch.4, p. HTML 156, 162    │
+     │ CSS grid (3 columns)     │ Ch.6 grid layout          │
+     │ &copy; &amp; &mdash;     │ Ch.2, p. HTML 63–66       │
+     └──────────────────────────────────────────────────────┘
+     ================================================================ -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ha-Ntate Tladi &mdash; Staff</title>
+    <!-- A8-REQ: Add a favicon to every HTML file in the project -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="StyleSheet/styles.css">
+</head>
+<body>
+
+<div id="container">
+
+    <!-- HEADER — Ch.2, p. HTML 55–58 -->
+    <header>
+        <!-- REQ 6a: business name in header -->
+        <div class="header-text">
+            <h1>Ha-Ntate Tladi</h1>
+            <p class="tagline">Fresh or Fokol &mdash; Phuthaditjhaba&rsquo;s freshest vegetables</p>
+        </div>
+        <!-- REQ 6b: logo image placed below the h1 heading — Ch.3, p. HTML 92–97 -->
+        <img src="images/logo.png" alt="Ha-Ntate Tladi logo" class="logo round">
+    </header>
+
+    <!-- REQ 6c: navigation bar linking to all pages, unordered list — Ch.4, p. HTML 166–170 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="staff.html" class="active">Staff</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN — Ch.2, p. HTML 55–58 -->
+    <main>
+
+        <div class="staff-section">
+
+            <!-- REQ 6e: aside element introducing the staff — Ch.2, p. HTML 57–58 -->
+            <aside>
+                <h2>Meet the Staff</h2>
+                <p>Behind every great business is immense dedication.
+				   Ha-Ntate Tladi is a sole proprietor who runs the
+				   stall single-handedly each day to keep his service
+				   fresh, friendly, and reliable for the whole community
+				   &mdash; from setting up
+                   before sunrise, to weighing produce for customers, to
+                   keeping the parcel counter running smoothly.</p>
+            </aside>
+
+            <!-- REQ 6d: container for the 3-column grid layout -->
+            <!-- REQ 6f: minimum of 3 images showing staff at work
+                 REQ 6g: figure element groups each image
+                 REQ 6h: figcaption names the staff member and their task -->
+            <div class="staff-grid">
+
+                <!-- FIGURE 1 — Ch.3, p. HTML 97–99 -->
+                <figure>
+                    <img src="images/staff-arranging-produce.png"
+                         alt="Ha-Ntate Tladi arranging fresh tomatoes and onions for display">
+                    <figcaption>Ha-Ntate Tladi &mdash; arranging fresh
+                        produce for display on the stall.</figcaption>
+                </figure>
+
+                <!-- FIGURE 2 -->
+                <figure>
+                    <img src="images/staff-selling-oranges.png"
+                         alt="Ha-Ntate Tladi at the stall with crates of fresh oranges">
+                    <figcaption>Ha-Ntate Tladi &mdash; preparing and
+                        selling fresh oranges at the stall.</figcaption>
+                </figure>
+
+                <!-- FIGURE 3 -->
+                <figure>
+                    <img src="images/staff-parcel-counter.png"
+                         alt="Ha-Ntate Tladi managing the stall and parcel counter">
+                    <figcaption>Ha-Ntate Tladi &mdash; keeping watch over
+                        the stall and parcel counter.</figcaption>
+                </figure>
+
+            </div><!-- end staff-grid -->
+
+            <!-- h3 — Ch.2, p. HTML 61–62 -->
+            <h3>The Owner &mdash; Ha-Ntate Tladi</h3>
+
+            <div class="staff-card">
+                <img src="images/stall.png"
+                     alt="Ha-Ntate Tladi at his vegetable stall">
+                <div>
+                    <!-- description list dl/dt/dd — Ch.3, p. HTML 114–116 -->
+                    <dl>
+                        <dt>Role:</dt>
+                        <dd>Owner &amp; Operator</dd>
+                        <dt>Location:</dt>
+                        <dd>Mampoi Road &amp; Nkahloleng Road, Phuthaditjhaba-A</dd>
+                        <dt>Phone:</dt>
+                        <dd><a href="tel:+27632107292" class="tel-link">&#9742;&nbsp;063 210 7292</a></dd>
+                        <dt>Years in Business:</dt>
+                        <dd>5+ years</dd>
+                        <dt>Speciality:</dt>
+                        <dd>Fresh vegetables &amp; community service</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- h3 — Ch.2, p. HTML 61–62 -->
+            <h3>His Story</h3>
+
+            <!-- paragraph elements — Ch.2, p. HTML 69–70 -->
+            <p>After being retrenched from his position as a security guard
+               at a tertiary institution, Ha-Ntate Tladi spent years applying
+               for employment without success. Rather than give up, he chose
+               entrepreneurship.</p>
+
+            <p>He started small, selling sweets and snacks. After careful
+               analysis he noticed revenue dropped during school holidays
+               because his primary customers were schoolchildren. He pivoted
+               to selling vegetables &mdash; reasoning that food is a universal
+               necessity unaffected by school calendars.</p>
+
+            <p>Positioned near two busy shopping complexes, he built a
+               consistent, loyal customer base. He also donates cracked or
+               unsellable tomatoes to homeless individuals in the area,
+               or gives them packaging material so they can sell the
+               tomatoes themselves.</p>
+
+            <h3>Business Philosophy</h3>
+
+            <!-- unordered list — Ch.3, p. HTML 112–114 -->
+            <ul>
+                <li>Always stock fresh, quality produce</li>
+                <li>Keep prices affordable and fair for the community</li>
+                <li>Give back at every opportunity</li>
+                <li>Build trust through consistency and honesty</li>
+                <li>Serve every customer with dignity and respect</li>
+            </ul>
+
+            <h3>Key Milestones</h3>
+
+            <!-- ordered list — Ch.3, p. HTML 116–118 -->
+            <ol>
+                <li>Started selling sweets and snacks</li>
+                <li>Identified seasonal revenue drops &mdash; pivoted to vegetables</li>
+                <li>Relocated to high-traffic mall corridor</li>
+                <li>Added parcel counter service at R5 per person</li>
+                <li>Established community donation programme for homeless</li>
+            </ol>
+
+            <br>
+            <a href="contact.html" class="action">Contact the Vendor</a>
+
+        </div>
+
+    </main>
+
+    <!-- REQ 6i: footer contact details with special characters — Ch.2, p. HTML 55–58, 66 -->
+    <footer>
+        <p>&copy; 2026 Ha-Ntate Tladi. All Rights Reserved.</p>
+        <p>Mampoi Road &amp; Nkahloleng Road, Phuthaditjhaba-A, 9869</p>
+        <p>
+            <a href="tel:+27632107292" class="tel-link">&#9742;&nbsp;063 210 7292</a>
+            &nbsp;|&nbsp;
+            <a href="mailto:22297510@mylife.unisa.ac.za" class="mail-link">&#9993;&nbsp;22297510@mylife.unisa.ac.za</a>
+        </p>
+    </footer>
+
+</div><!-- end #container -->
+</body>
+</html>
