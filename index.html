@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!-- ================================================================
+     index.html  —  Home Page
+     Ha-Ntate Tladi Vegetable Vendor
+     Student: Lehola Pheello Nicolin  |  No: 22297510
+     Module:  ICT1513 — Assessment 5
+
+     Every comment below is tagged "REQ 4x" so it can be matched
+     directly against Assessment 5, requirement 4 (a–f).
+
+     CODE SOURCES — Minnick, J. (2021). Responsive Web Design
+     with HTML 5 & CSS (9th ed.). Cengage Learning.
+     ┌──────────────────────────────────────────────────────┐
+     │ Element                  │ Book page                 │
+     ├──────────────────────────────────────────────────────┤
+     │ DOCTYPE / html / head    │ Ch.1, p. HTML 31–34       │
+     │ meta viewport            │ Ch.5, p. HTML 227–228     │
+     │ link to CSS              │ Ch.4, p. HTML 159–160     │
+     │ header / nav / main /    │                           │
+     │   footer (semantic HTML5)│ Ch.2, p. HTML 55–58       │
+     │ h1, h2, h3               │ Ch.2, p. HTML 61–63       │
+     │ p paragraph              │ Ch.2, p. HTML 69–70       │
+     │ img src alt              │ Ch.3, p. HTML 92–97       │
+     │ a href (relative links)  │ Ch.3, p. HTML 103–104     │
+     │ ul / li                  │ Ch.3, p. HTML 112–114     │
+     │ nav ul li a              │ Ch.4, p. HTML 166–170     │
+     │ #container id selector   │ Ch.4, p. HTML 156, 162    │
+     │ .action class selector   │ Ch.4, p. HTML 183–185     │
+     │ &copy; &nbsp; &mdash;    │ Ch.2, p. HTML 63–66       │
+     │ inline style attribute   │ Ch.4, p. HTML 154–155     │
+     └──────────────────────────────────────────────────────┘
+     ================================================================ -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- meta viewport — Ch.5, p. HTML 227–228 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title — Ch.2, p. HTML 59 -->
+    <title>Ha-Ntate Tladi &mdash; Fresh Vegetables</title>
+    <!-- link to external CSS, now stored in the StyleSheet folder
+         (Assessment 5, requirement 8) — Ch.4, p. HTML 159–160 -->
+    <!-- A8-REQ: Add a favicon to every HTML file in the project -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="StyleSheet/styles.css">
+</head>
+<body>
+
+<!-- #container id selector — Ch.4, p. HTML 156, 162–163 -->
+<div id="container">
+
+    <!-- HEADER — Ch.2, p. HTML 55–58 -->
+    <header>
+        <!-- img element, class="round" applies REQ 9s circular style — Ch.3, p. HTML 92–97 -->
+        <img src="images/logo.png" alt="Ha-Ntate Tladi logo" class="logo round">
+        <div class="header-text">
+            <!-- REQ 4a: the business name appears in the header section, in an h1 -->
+            <h1>Ha-Ntate Tladi</h1>
+            <!-- p tagline — Ch.2, p. HTML 69–70 -->
+            <p class="tagline">Fresh or Fokol &mdash; Phuthaditjhaba&rsquo;s freshest vegetables</p>
+        </div>
+    </header>
+
+    <!-- REQ 4b: navigation bar linking to all pages, coded as an
+         unordered list — Ch.2, p. HTML 55–58 | ul/li/a — Ch.4, p. HTML 166–170 -->
+    <nav>
+        <ul>
+            <!-- a href relative links — Ch.3, p. HTML 103–104 -->
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN — Ch.2, p. HTML 55–58 -->
+    <main>
+
+        <!-- REQ 4c: hero image — img src alt — Ch.3, p. HTML 92–97 -->
+        <div class="hero">
+            <img src="images/stall.png"
+                 alt="Ha-Ntate Tladi vegetable stall in Phuthaditjhaba">
+            <div class="hero-overlay">
+                <!-- h2 — Ch.2, p. HTML 61–62 -->
+                <h2>Welcome to Ha-Ntate Tladi</h2>
+                <!-- p — Ch.2, p. HTML 69–70 -->
+                <p>Fresh vegetables every day &mdash; between Maluti Crescent Mall
+                   &amp; Setsing Plaza, Phuthaditjhaba.</p>
+                <!-- .action class link — Ch.4, p. HTML 183–185 -->
+                <a href="products.html" class="action">View Our Products</a>
+            </div>
+        </div>
+
+        <!-- ============================================================
+             A8-REQ: "Add a new div element to the home page" +
+             "Add figure elements to the home page" +
+             "Modify the home page to add essential content for a
+             mobile user."
+             This div carries the class="mobile" so it can be shown to
+             small-screen visitors and hidden again once the tablet
+             media query takes over (see styles.css). The two tap-sized
+             action links (call / directions) are the "essential
+             content" a mobile shopper needs first; the two figure
+             elements group a photo with its figcaption — Ch.3,
+             p. HTML 97–99. ============================================= -->
+        <div class="mobile">
+            <!-- REQ: text-shadow style rule targets this h3 — see styles.css -->
+            <h3>Visit Us Today</h3>
+            <p>Open now &mdash; call ahead or tap for directions before
+               you head to the stall.</p>
+            <div class="mobile-actions">
+                <a href="tel:+27632107292" class="action">&#9742;&nbsp;Call Now</a>
+                <a href="contact.html" class="action">Get Directions</a>
+            </div>
+            <!-- figure/figcaption — Ch.3, p. HTML 97–99 -->
+            <figure>
+                <img src="images/stall.png"
+                     alt="Ha-Ntate Tladi vegetable stall in Phuthaditjhaba">
+                <figcaption>Our stall between Maluti Crescent Mall &amp; Setsing Plaza.</figcaption>
+            </figure>
+            <figure>
+                <img src="images/parcel.jpg"
+                     alt="Bags safely stored at the Ha-Ntate Tladi parcel counter">
+                <figcaption>Drop your bags at the parcel counter for just R5.</figcaption>
+            </figure>
+        </div>
+
+        <!-- A8-REQ: "tablet-desktop" class — richer marketing copy that
+             is hidden on small mobile screens but shown once the
+             visitor reaches a tablet or desktop viewport (styles.css
+             swaps this with the .mobile div above). -->
+        <div class="tablet-desktop">
+            <h3>Shop With Confidence</h3>
+            <p>From hand-picked produce to a safe parcel counter,
+               Ha-Ntate Tladi has served the Phuthaditjhaba-A community
+               for years with consistency, fair pricing, and a smile.
+               Browse our full range of fresh vegetables and services
+               below.</p>
+        </div>
+
+        <!-- REQ 4d: the main tag contains a minimum of three paragraphs
+             about the business (well over 200 words in total) -->
+        <div class="about-section">
+            <!-- h2 — Ch.2, p. HTML 61–62 -->
+            <h2>About Us</h2>
+
+            <!-- REQ 4d paragraph 1 -->
+            <p>Ha-Ntate Tladi is a small, community-owned vegetable stall
+               operating at the corner of Mampoi Road &amp; Nkahloleng Road,
+               Phuthaditjhaba-A, right between two of the area&rsquo;s busiest
+               shopping complexes, Maluti Crescent Mall and Setsing Plaza.
+               Every morning the stall is restocked with fresh, hand-picked
+               potatoes, onions, tomatoes, cabbages, chillies, and oranges,
+               sourced from trusted local suppliers so that customers always
+               find something crisp and in season. The stall has become a
+               familiar stop for shoppers walking between the two malls,
+               many of whom now plan their grocery run specifically around
+               a visit to Ha-Ntate Tladi.</p>
+
+            <!-- REQ 4d paragraph 2 -->
+            <p>What began as a small table of sweets and snacks has grown,
+               over several years, into a trusted vegetable business built
+               on consistency and fair pricing. The owner noticed early on
+               that selling snacks to schoolchildren meant income dropped
+               sharply during school holidays, so the business shifted to
+               fresh produce &mdash; a category of goods that people need
+               every single day of the year, holiday or not. That single
+               decision steadied the business and allowed it to grow a
+               loyal, everyday customer base rather than one tied to the
+               school calendar.
+               <!-- REQ 4e: style attribute added directly to text to
+                    highlight a special promotion — Ch.4, p. HTML 154–155 -->
+               <span style="color:#e8604c; font-weight:bold;">Right now,
+               every customer who buys three bags of vegetables gets a
+               fourth bag absolutely free &mdash; ask at the stall for
+               today&rsquo;s special.</span></p>
+
+            <!-- REQ 4d paragraph 3 -->
+            <p>Beyond selling vegetables, Ha-Ntate Tladi also runs a
+               convenient parcel counter for just R5 per person, so
+               shoppers can leave their bags safely at the stall while
+               they walk freely between both malls without carrying heavy
+               groceries around all day. The stall is positioned close to
+               public transport routes, which makes it easy for customers
+               to get home afterwards with everything they have bought.
+               This mix of fresh produce and practical services has made
+               the stall much more than just a place to buy vegetables
+               &mdash; it has become a small, dependable fixture of daily
+               life in Phuthaditjhaba-A.</p>
+
+            <!-- REQ 4d paragraph 4 -->
+            <p>The business also gives back to the community it serves.
+               Vegetables that are slightly bruised or otherwise unfit for
+               sale are never simply thrown away; they are given to
+               homeless individuals in the area, along with packaging
+               material so that they, too, can resell what they receive if
+               they choose to. This small act of generosity reflects the
+               values behind Ha-Ntate Tladi &mdash; a business built not
+               only to make a living, but to support the wider community
+               around it, one bag of vegetables at a time.</p>
+        </div>
+
+        <!-- WHY SHOP WITH US — unordered list — Ch.3, p. HTML 112–114 -->
+        <div class="highlights">
+            <!-- h2 — Ch.2, p. HTML 61–62 -->
+            <h2>Why Shop With Us?</h2>
+            <ul>
+                <li>&#10003;&nbsp; Fresh vegetables sourced daily</li>
+                <li>&#10003;&nbsp; Affordable prices &mdash; R10 to R40</li>
+                <li>&#10003;&nbsp; Parcel counter service &mdash; only R5</li>
+                <li>&#10003;&nbsp; Near public transport</li>
+                <li>&#10003;&nbsp; Community-driven business</li>
+                <li>&#10003;&nbsp; Friendly, honest service</li>
+            </ul>
+            <br>
+            <!-- relative link — Ch.3, p. HTML 103–104 -->
+            <a href="contact.html" class="action">Contact Us</a>
+        </div>
+
+    </main>
+
+    <!-- REQ 4f: footer contact details — telephone and email links with
+         special characters for a small phone, envelope and copyright
+         symbol — Ch.2, p. HTML 55–58, 66 -->
+    <footer>
+        <!-- &copy; copyright symbol — Ch.2, p. HTML 66 -->
+        <p>&copy; 2026 Ha-Ntate Tladi. All Rights Reserved.</p>
+        <p>Mampoi Road &amp; Nkahloleng Road, Phuthaditjhaba-A, 9869</p>
+        <!-- &#9742; small phone character on the tel: link,
+             &#9993; small envelope character on the mailto: link
+             — Ch.3, p. HTML 104 -->
+        <p>
+            <a href="tel:+27632107292" class="tel-link">&#9742;&nbsp;063 210 7292</a>
+            &nbsp;|&nbsp;
+            <a href="mailto:22297510@mylife.unisa.ac.za" class="mail-link">&#9993;&nbsp;22297510@mylife.unisa.ac.za</a>
+        </p>
+    </footer>
+
+</div><!-- end #container -->
+</body>
+</html>
